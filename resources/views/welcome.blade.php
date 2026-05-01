@@ -70,6 +70,7 @@
     <!-- MAIN CONTENT -->
     <main class="flex-1 container mx-auto px-4 py-12">
 
+        <!-- FEATURES -->
         <div class="grid md:grid-cols-3 gap-6">
 
             <!-- Card 1 -->
@@ -98,28 +99,36 @@
 
         </div>
 
-                <!-- CHIRPS SECTION -->
-        <section class="mt-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Latest Chirps 🐦</h2>
+        <!-- CHIRPS SECTION -->
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">
+                Latest Chirps 🐦
+            </h2>
 
             <div class="space-y-4 max-w-2xl mx-auto">
-                @foreach ($chirps as $chirp)
-                    <div class="card bg-base-100 shadow-md">
+                @forelse ($chirps as $chirp)
+                    <div class="card bg-base-100 shadow-md hover:scale-[1.02] transition duration-300">
                         <div class="card-body">
-                            <p class="text-lg">{{ $chirp }}</p>
+                            <p class="text-lg text-base-content">{{ $chirp }}</p>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="alert alert-info shadow-lg">
+                        <span>Belum ada chirps tersedia.</span>
+                    </div>
+                @endforelse
             </div>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer footer-center p-6 bg-base-300 text-base-content">
+    <footer class="footer footer-center p-6 bg-base-300 text-base-content mt-10">
         <div>
             <p class="font-semibold">© 2026 Chirper</p>
-            <p class="text-xs opacity-70">Built with Laravel ❤️ Arthio Dipa Wiraguna (240170183)</p>
+            <p class="text-xs opacity-70">
+                Built with Laravel ❤️ Arthio Dipa Wiraguna (240170183)
+            </p>
         </div>
     </footer>
 
