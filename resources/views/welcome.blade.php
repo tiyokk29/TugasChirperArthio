@@ -98,6 +98,21 @@
 
         </div>
 
+                <!-- CHIRPS SECTION -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Latest Chirps 🐦</h2>
+
+            <div class="space-y-4 max-w-2xl mx-auto">
+                @foreach ($chirps as $chirp)
+                    <div class="card bg-base-100 shadow-md">
+                        <div class="card-body">
+                            <p class="text-lg">{{ $chirp }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
