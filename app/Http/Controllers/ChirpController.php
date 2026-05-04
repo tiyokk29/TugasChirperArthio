@@ -10,7 +10,6 @@ class ChirpController extends Controller
     {
         $chirps = [
             'Halo Laravel!',
-            'Belajar Controller itu mudah',
             'Deploy ke Laravel Cloud berhasil'
         ];
 
