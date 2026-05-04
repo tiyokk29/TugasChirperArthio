@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chirp;
 use Illuminate\Http\Request;
 
 class ChirpController extends Controller
 {
     public function index()
-    {
-        $chirps = [
-            'Halo Laravel!',
-            'Deploy ke Laravel Cloud berhasil'
-        ];
+{
+    $chirps = \App\Models\Chirp::with('user')
+        ->latest()
+        ->take(50)
+        ->get();
 
-        return view('welcome', [
-            'chirps' => $chirps
-        ]);
-    }
+    return view('welcome', compact('chirps'));
+}
 }
