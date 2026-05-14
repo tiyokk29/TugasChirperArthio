@@ -57,13 +57,14 @@
                 Chirper is your modern social platform to express ideas, connect with people, and build your voice.
             </p>
             <div class="mt-6 flex justify-center gap-4">
-                <a href="#" class="btn btn-accent rounded-full px-6">
-                    Get Started
-                </a>
-                <a href="#" class="btn btn-outline text-white border-white rounded-full px-6">
-                    Learn More
-                </a>
-            </div>
+    <a href="/home" class="btn btn-accent rounded-full px-6">
+        Open Feed
+    </a>
+
+    <a href="#" class="btn btn-outline text-white border-white rounded-full px-6">
+        Learn More
+    </a>
+</div>
         </div>
     </section>
 
@@ -98,42 +99,6 @@
             </div>
 
         </div>
-
-       <!-- CHIRPS SECTION -->
-<section class="mt-16">
-    <h2 class="text-3xl font-bold text-center mb-8 text-white">
-        Latest Chirps 🐦
-    </h2>
-
-    <div class="space-y-4 max-w-2xl mx-auto">
-        @forelse ($chirps as $chirp)
-            <div class="card bg-base-100 shadow-md hover:scale-[1.02] transition duration-300">
-                <div class="card-body">
-
-                    <!-- USER -->
-                    <div class="font-semibold text-sm text-gray-500">
-                        {{ $chirp->user->name ?? 'Anonymous' }}
-                    </div>
-
-                    <!-- MESSAGE -->
-                    <p class="text-lg text-base-content">
-                        {{ $chirp->message }}
-                    </p>
-
-                    <!-- TIME -->
-                    <div class="text-xs text-gray-400 mt-2">
-                        {{ $chirp->created_at->diffForHumans() }}
-                    </div>
-
-                </div>
-            </div>
-        @empty
-            <div class="alert alert-info shadow-lg">
-                <span>Belum ada chirps tersedia.</span>
-            </div>
-        @endforelse
-    </div>
-</section>
 
     </main>
 
